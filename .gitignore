@@ -1,0 +1,16 @@
+node_modules/
+.env
+.env.*
+!.env.example
+data/
+target/
+contract/target/
+*.json.key
+.near-credentials/
+neardev/
+demo/frames/
+demo/*.mp3
+demo/*.wav
+demo/marks.json
+*.log
+demo/frames.txt

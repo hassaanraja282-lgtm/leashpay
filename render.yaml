@@ -1,0 +1,33 @@
+# Render Blueprint for the LeashPay demo (free web service, NEAR testnet only).
+# Secrets are NOT in this file: set them in the Render dashboard (sync: false).
+services:
+  - type: web
+    name: leashpay
+    runtime: node
+    plan: free
+    buildCommand: npm ci --omit=dev
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
+      - key: NEAR_NETWORK
+        value: testnet
+      - key: NEAR_RPC_URL
+        value: https://test.rpc.fastnear.com
+      - key: LEASHPAY_CONTRACT
+        value: vault.leashpay-c143d2.testnet
+      - key: AGENT_ACCOUNT_ID
+        value: agent.leashpay-c143d2.testnet
+      - key: OWNER_ACCOUNT_ID
+        value: leashpay-c143d2.testnet
+      - key: ENABLE_OWNER_ACTIONS
+        value: "true"
+      - key: RATE_LIMIT_PER_MIN
+        value: "12"
+      - key: AGENT_PRIVATE_KEY   # the agent's function-call key (request_payment only)
+        sync: false
+      - key: OWNER_PRIVATE_KEY   # testnet owner key; omit to make the hosted dashboard read-only for owner actions
+        sync: false
+      - key: GEMINI_API_KEY      # optional; rule-based parser is used when unset
+        sync: false

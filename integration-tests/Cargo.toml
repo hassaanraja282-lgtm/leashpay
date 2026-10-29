@@ -1,0 +1,16 @@
+[package]
+name = "leashpay-integration-tests"
+version = "0.1.0"
+edition = "2021"
+publish = false
+license = "MIT"
+
+# Sandbox (local NEAR node) tests via near-workspaces.
+# Build the contract first: (cd ../contract && cargo near build non-reproducible-wasm)
+# then: LEASHPAY_WASM=../contract/target/near/leashpay.wasm cargo test
+
+[dev-dependencies]
+near-workspaces = { version = "0.24", default-features = false, features = ["install"] }
+tokio = { version = "1", features = ["full"] }
+serde_json = "1"
+anyhow = "1"
