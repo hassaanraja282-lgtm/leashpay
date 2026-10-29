@@ -5,6 +5,7 @@ LeashPay lets a person give an AI agent money **without giving it the keys**. Th
 - **Tracks:** AI Security & Defense (`security`), Agent Economy (`agents`)
 - **Network:** NEAR **testnet only** (no mainnet code paths; the server refuses to start with a non-testnet config)
 - **Live contract:** [`vault.leashpay-c143d2.testnet`](https://testnet.nearblocks.io/address/vault.leashpay-c143d2.testnet)
+- **Hosted demo (read-only, live testnet data):** https://leashpay-4g7d.onrender.com (free Render instance; first load after idle takes ~1 min). The full agent flow (paying, blocking, approvals) is shown in the demo video and runs locally with `npm start`.
 - **Demo video:** `demo/LeashPay_demo.mp4` (about 2.5 min)
 - **License:** MIT
 
